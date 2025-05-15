@@ -1,7 +1,5 @@
 # Projeto React Native com Docker
 
-Este projeto utiliza Docker para criar um ambiente de desenvolvimento padronizado para React Native.
-
 ## Requisitos
 
 - Docker
