@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  react-native-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: react-native-dev
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    ports:
+      - "8081:8081"  # Metro bundler
+      - "19000:19000" # Expo
+      - "19001:19001" # Expo
+      - "19002:19002" # Expo DevTools
+    environment:
+      - NODE_ENV=development
+    stdin_open: true
+    tty: true
+    command: bash -c "tail -f /dev/null"  # Mantém o container rodando
+
+volumes:
+  node_modules:
